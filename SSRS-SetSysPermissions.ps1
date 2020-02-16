@@ -3,6 +3,7 @@
 #Must be run from somewhere that has access to your report services website
 #Usage: SSRS-setSysPermissions -User "$user" -roles "User"
 #Roles: admin, user, schedule, msbi
+#Important! Modify the groups in this script to your match your environment first
 
 function SSRS-setSysPermissions {
 
