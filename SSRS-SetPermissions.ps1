@@ -2,6 +2,8 @@
 #Function for adding Users to Power-Bi Report Server, SSRS, Reporting Services
 #Must be run from somewhere that has access to your report services website
 #Usage: SSRS-setPermissions -user "$User" -folder "$path" -roles "browser,report" -forceinherit $true/$false
+#Roles: Content, Browser, Pub, My, Report, MSBI
+#You may need to create or modify these roles.
 
 function SSRS-setPermissions {
 
