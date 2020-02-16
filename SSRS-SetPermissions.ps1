@@ -1,7 +1,7 @@
 #Created by EGGSTOASTBACON :: https://github.com/eggstoastbacon
 #Function for adding Users to Power-Bi Report Server, SSRS, Reporting Services
 #Must be run from somewhere that has access to your report services website
-#Usage: setPermissions -User "$User" -folder "$path" -roles "browser,report" 
+#Usage: SSRS-setPermissions -user "$User" -folder "$path" -roles "browser,report" -forceinherit $true/$false
 
 function SSRS-setPermissions {
 
@@ -25,7 +25,7 @@ function SSRS-setPermissions {
     
     $input_user = $user
     $input_role = $roles
-    $InheritParent = $true
+    $InheritParent = $forceinherit
     $Content_Manager = "False"
     $Browser = "False"
     $My_Reports = "False"
