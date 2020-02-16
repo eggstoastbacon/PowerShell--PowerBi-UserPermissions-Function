@@ -4,6 +4,7 @@
 #Usage: SSRS-setPermissions -User "$User" -folder ("/" + $progPath) -roles "browser,report"
 #Roles: Content, Browser, My, Pub, Report, MSBI 
 #You may need to create or customize these roles within the portal.
+#Important! Modify the groups in this script to your match your environment first!
 
 function SSRS-setPermissions {
 
