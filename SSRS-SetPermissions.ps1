@@ -1,9 +1,9 @@
 #Created by EGGSTOASTBACON :: https://github.com/eggstoastbacon
 #Function for adding Users to Power-Bi Report Server, SSRS, Reporting Services
 #Must be run from somewhere that has access to your report services website
-#Usage: SSRS-setPermissions -user "$User" -folder "$path" -roles "browser,report" -forceinherit $true/$false
-#Roles: Content, Browser, Pub, My, Report, MSBI
-#You may need to create or modify these roles.
+#Usage: SSRS-setPermissions -User "$User" -folder ("/" + $progPath) -roles "browser,report"
+#Roles: Content, Browser, My, Pub, Report, MSBI 
+#You may need to create or customize these roles within the portal.
 
 function SSRS-setPermissions {
 
@@ -13,12 +13,12 @@ function SSRS-setPermissions {
 
     $domain = "DOMAIN"
     $password = Get-Content D:\YOUR\ENC\PASSWORD.ENC | ConvertTo-SecureString
-    $LogonUser = "username@someplace.org"
+    $LogonUser = "username"
     $URL = "http://localhost:80/ReportServer"
     $ReportServerUri = "$URL/ReportService2010.asmx"
     $Proxy = New-WebServiceProxy -Uri $ReportServerUri
     $Proxy.CookieContainer = New-Object System.Net.CookieContainer(10);
-    $Proxy.LogonUser("$ogonUser", "$password", "$domain")
+    $Proxy.LogonUser("$logonUser", "$password", "$domain")
     
     if ($folder) {
         $folder = $folder 
@@ -27,7 +27,7 @@ function SSRS-setPermissions {
     
     $input_user = $user
     $input_role = $roles
-    $InheritParent = $forceinherit
+    $InheritParent = $true
     $Content_Manager = "False"
     $Browser = "False"
     $My_Reports = "False"
