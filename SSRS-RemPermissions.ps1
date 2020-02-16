@@ -2,6 +2,7 @@
 #Function for adding Users to Power-Bi Report Server, SSRS, Reporting Services
 #Must be run from somewhere that has access to your report services website
 #Usage: SSRS-remPermissions -User "$user" -folder "$path"
+#Important! Modify the groups in this script to your match your environment first
 
 function SSRS-remPermissions {
 
